@@ -1,5 +1,5 @@
 <template>
-  <v-app >
+  <v-app dark>
     <!--<v-navigation-drawer-->
     <!--:mini-variant="miniVariant"-->
     <!--:clipped="clipped"-->
@@ -24,38 +24,38 @@
     <!--</v-list-tile>-->
     <!--</v-list>-->
     <!--</v-navigation-drawer>-->
-    <v-toolbar
-      :clipped-left="clipped"
-      fixed
-      app
-    >
-      <v-toolbar-side-icon @click="drawer = !drawer" />
-      <v-btn
-        icon
-        @click.stop="miniVariant = !miniVariant"
-      >
-        <v-icon v-html="miniVariant ? 'chevron_right' : 'chevron_left'" />
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="clipped = !clipped"
-      >
-        <v-icon>web</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="fixed = !fixed"
-      >
-        <v-icon>remove</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title"/>
-      <v-btn
-        icon
-        @click.stop="rightDrawer = !rightDrawer"
-      >
-        <v-icon>menu</v-icon>
-      </v-btn>
-    </v-toolbar>
+    <!--<v-toolbar-->
+    <!--:clipped-left="clipped"-->
+    <!--fixed-->
+    <!--app-->
+    <!--&gt;-->
+    <!--<v-toolbar-side-icon @click="drawer = !drawer" />-->
+    <!--<v-btn-->
+    <!--icon-->
+    <!--@click.stop="miniVariant = !miniVariant"-->
+    <!--&gt;-->
+    <!--<v-icon v-html="miniVariant ? 'chevron_right' : 'chevron_left'" />-->
+    <!--</v-btn>-->
+    <!--<v-btn-->
+    <!--icon-->
+    <!--@click.stop="clipped = !clipped"-->
+    <!--&gt;-->
+    <!--<v-icon>web</v-icon>-->
+    <!--</v-btn>-->
+    <!--<v-btn-->
+    <!--icon-->
+    <!--@click.stop="fixed = !fixed"-->
+    <!--&gt;-->
+    <!--<v-icon>remove</v-icon>-->
+    <!--</v-btn>-->
+    <!--<v-toolbar-title v-text="title"/>-->
+    <!--<v-btn-->
+    <!--icon-->
+    <!--@click.stop="rightDrawer = !rightDrawer"-->
+    <!--&gt;-->
+    <!--<v-icon>menu</v-icon>-->
+    <!--</v-btn>-->
+    <!--</v-toolbar>-->
     <v-content>
       <v-container>
         <nuxt />
