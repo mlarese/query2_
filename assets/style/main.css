@@ -1,0 +1,109 @@
+@import "../node_modules/vue-wysiwyg/dist/vueWysiwyg.css";
+.page-enter-active, .page-leave-active {
+    transition: opacity .5s;
+}
+.page-enter, .page-leave-to {
+    opacity: 0;
+}
+
+.editr--toolbar a svg {
+    width: 13px;
+    height: 13px;
+    margin: 8px auto;
+}
+
+.tabs__bar, .tabs {
+    background: transparent !important;
+}
+
+.btn {
+    font-weight: 400;
+}
+
+.btn--round {
+    border-radius: 8px;
+}
+
+.btn--active {
+}
+
+a, a:link, a:visited, a:active, a:hover {
+    border:0 ;
+    text-decoration: none;
+}
+
+.elevation-1 {
+    -webkit-box-shadow: 0px 1px 1px -1px rgba(0, 0, 0, .2), 0px 1px 1px 0px rgba(0, 0, 0, .14), 0px 1px 1px 0px rgba(0, 0, 0, .12) !important;
+    box-shadow: 0px 1px 1px -1px rgba(0, 0, 0, .2), 0px 1px 1px 0px rgba(0, 0, 0, .14), 0px 1px 1px 0px rgba(0, 0, 0, .12) !important;
+}
+.btn {
+    font-size: 14px;
+}
+
+.toolbar__side-icon .icon {
+    font-size: 20px !important;
+}
+
+.input-group--text-field input,
+.input-group--text-field textarea {
+    font-size: 14px;
+}
+
+
+.form-header{
+    border-bottom: 2px solid black;
+}
+
+.el-input.is-disabled .el-input__inner {
+    background-color: transparent !important;
+    color: #565656;
+}
+
+.datatable td .btn--icon {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.elevation-0.toolbar {
+    border-bottom: 1px solid #e8e8e8;
+    border-top: 1px solid #e8e8e8;
+}
+
+.elevation-0.toolbar .tabs__container {
+    border-bottom: 1px solid #e8e8e8;
+    border-top: 1px solid #e8e8e8;
+}
+
+.input-group--solo.input-group--select {
+    border:1px solid #e8e8e8;
+}
+
+.input-group--select .input-group__details{
+    height: 0px;
+    min-height: 0px;
+}
+
+
+.input-group--text-field input, .input-group--text-field textarea,
+.input-group--select .input-group__selections__comma
+{
+    font-size: 12px;
+    padding-left:8px;
+}
+
+.input-group {
+    padding: 12px 0 0;
+}
+
+.v-dialog {
+    overflow-y: visible;
+}
+
+.v-list__tile {
+    font-size: 12px;
+    height: 22px;
+}
+
+
