@@ -1,5 +1,3 @@
-import format from 'date-fns/format'
-import numeral from 'numeral'
 
 numeral.register('locale', 'it', {
   delimiters: {

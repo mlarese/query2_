@@ -7,7 +7,7 @@
     </v-layout>
     <v-data-table
       :headers="headers"
-      :items="filteredList"
+      :items="list"
       :pagination.sync="pagination"
       :hide-actions="false"
       class="elevation-1"
@@ -35,6 +35,7 @@
 
 <script>
     import {mapState, mapActions} from 'vuex'
+    const module = 'query'
     export default {
         name: "QueryList",
         data () {
@@ -52,6 +53,7 @@
             ]
             return {
                 headers,
+                module,
                 pagination: {}
             }
         },

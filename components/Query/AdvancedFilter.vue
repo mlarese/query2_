@@ -12,10 +12,9 @@
       <v-flex xs4>
         <v-text-field
           :placeholder="$vuetify.t('Name')"
-          v-model="record"
+          v-model="$record.name"
           :rules="rules.name"
           flat
-          hide-details
           dense
           box
           required
@@ -25,10 +24,8 @@
       <v-flex xs4>
         <v-text-field
           :placeholder="$vuetify.t('Surname')"
-          v-model="record"
+          v-model="$record.surname"
           :rules="rules.surname"
-          flat
-          hide-details
           dense
           box
           required
@@ -37,12 +34,9 @@
       <v-flex xs4>
         <v-text-field
           :placeholder="$vuetify.t('Email')"
-          v-model="record"
+          v-model="$record.email"
           :rules="rules.email"
-          flat
           type="email"
-          hide-details
-          dense
           box
           required
         />
@@ -101,13 +95,14 @@
         <v-autocomplete
           :placeholder="$vuetify.t('Nationality')"
           v-model="filter"
+          :items="countries"
           flat
           hide-details
           hide-selected
           dense
           class="elevation-0"
-          item-text="name"
           item-value="value"
+          item-text="name"
           box
 
         />
@@ -148,7 +143,7 @@
             }
         },
         computed: {
-            ...mapState('query', ['$record', 'record', 'list', 'filter'])
+            ...mapState('query', ['$record', 'record', 'list', 'filter', 'countries'])
         }
     }
 </script>
