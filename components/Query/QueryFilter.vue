@@ -20,7 +20,7 @@
     <v-layout class="pt-3">
 
       <v-flex
-        sm3
+        sm6
         class="pt-2">
         <v-menu
           :close-on-content-click="true"
@@ -36,7 +36,7 @@
             slot="activator"
             :placeholder="$vuetify.t('From')"
             :label="$vuetify.t('Check-In')"
-            v-model="fltDateFrom"
+            v-model="$record.checkin"
             box
             readonly
             append-icon="date_range"
@@ -46,12 +46,39 @@
             locale="ita" />
         </v-menu>
       </v-flex>
+      <!--<v-flex-->
+      <!--sm3-->
+      <!--class="pt-2">-->
+      <!--<v-menu-->
+      <!--:close-on-content-click="true"-->
+      <!--v-model="datePickerTo3"-->
+      <!--:nudge-right="40"-->
+      <!--:return-value.sync="date"-->
+      <!--transition="scale-transition"-->
+      <!--offset-y-->
+      <!--full-width-->
+      <!--min-width="250px"-->
+      <!--&gt;-->
+      <!--<v-text-field-->
+      <!--slot="activator"-->
+      <!--:placeholder="$vuetify.t('To')"-->
+      <!--v-model="fltDateTo"-->
+      <!--box-->
+      <!--readonly-->
+      <!--append-icon="date_range"-->
+      <!--/>-->
+      <!--<v-date-picker-->
+      <!--v-model="fltDateTo"-->
+      <!--locale="ita"/>-->
+      <!--</v-menu>-->
+      <!--</v-flex>-->
+
       <v-flex
-        sm3
+        sm6
         class="pt-2">
         <v-menu
           :close-on-content-click="true"
-          v-model="datePickerTo3"
+          v-model="datePickerTo"
           :nudge-right="40"
           :return-value.sync="date"
           transition="scale-transition"
@@ -62,70 +89,43 @@
           <v-text-field
             slot="activator"
             :placeholder="$vuetify.t('To')"
-            v-model="fltDateTo"
-            box
-            readonly
-            append-icon="date_range"
-          />
-          <v-date-picker
-            v-model="fltDateTo"
-            locale="ita"/>
-        </v-menu>
-      </v-flex>
-      <v-spacer/>
-      <v-flex
-        sm3
-        class="pt-2">
-        <v-menu
-          :close-on-content-click="true"
-          v-model="datePickerFrom1"
-          :nudge-right="40"
-          :return-value.sync="date"
-          transition="scale-transition"
-          offset-y
-          full-width
-          min-width="250px"
-        >
-          <v-text-field
-            slot="activator"
-            :placeholder="$vuetify.t('From')"
             :label="$vuetify.t('Check-Out')"
-            v-model="fltDateFrom1"
+            v-model="$record.checkout"
             box
             readonly
             append-icon="date_range"
           />
           <v-date-picker
-            v-model="fltDateFrom1"
+            v-model="fltDateTo"
             locale="ita" />
         </v-menu>
       </v-flex>
-      <v-flex
-        sm3
-        class="pt-2">
-        <v-menu
-          :close-on-content-click="true"
-          v-model="datePickerTo4"
-          :nudge-right="40"
-          :return-value.sync="date"
-          transition="scale-transition"
-          offset-y
-          full-width
-          min-width="250px"
-        >
-          <v-text-field
-            slot="activator"
-            :placeholder="$vuetify.t('To')"
-            v-model="fltDateTo1"
-            box
-            readonly
-            append-icon="date_range"
-          />
-          <v-date-picker
-            v-model="fltDateTo1"
-            locale="ita"/>
-        </v-menu>
-      </v-flex>
+      <!--<v-flex-->
+      <!--sm3-->
+      <!--class="pt-2">-->
+      <!--<v-menu-->
+      <!--:close-on-content-click="true"-->
+      <!--v-model="datePickerTo4"-->
+      <!--:nudge-right="40"-->
+      <!--:return-value.sync="date"-->
+      <!--transition="scale-transition"-->
+      <!--offset-y-->
+      <!--full-width-->
+      <!--min-width="250px"-->
+      <!--&gt;-->
+      <!--<v-text-field-->
+      <!--slot="activator"-->
+      <!--:placeholder="$vuetify.t('To')"-->
+      <!--v-model="fltDateTo1"-->
+      <!--box-->
+      <!--readonly-->
+      <!--append-icon="date_range"-->
+      <!--/>-->
+      <!--<v-date-picker-->
+      <!--v-model="fltDateTo1"-->
+      <!--locale="ita"/>-->
+      <!--</v-menu>-->
+      <!--</v-flex>-->
     </v-layout>
     <v-layout>
       <v-layout class="pt-3 pb-3">
@@ -176,9 +176,6 @@
                 date2: null,
                 datePickerTo: true,
                 datePickerFrom: true,
-                datePickerFrom1: true,
-                datePickerTo4: true,
-                datePickerTo3: true,
                 pagination: {}
             }
         },

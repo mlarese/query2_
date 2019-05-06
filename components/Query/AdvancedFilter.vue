@@ -47,29 +47,29 @@
         <v-autocomplete
           :placeholder="$vuetify.t('Product')"
           v-model="filter.product"
+          :items="list"
           flat
           hide-details
           hide-selected
           dense
           class="elevation-0"
-          item-text="name"
           item-value="value"
+          item-text="product"
           box
-
         />
       </v-flex>
       <v-flex xs4>
         <v-autocomplete
           :placeholder="$vuetify.t('Origin')"
-          :item="list"
           v-model="filter.origin"
+          :items="list"
           flat
           hide-details
           hide-selected
           dense
           class="elevation-0"
-          item-text="name"
-          item-value="name"
+          item-value="value"
+          item-text="origin"
           box
 
         />
@@ -77,14 +77,15 @@
       <v-flex xs4>
         <v-autocomplete
           :placeholder="$vuetify.t('Channel')"
-          v-model="filter"
+          v-model="filter.channel"
+          :items="list"
           flat
           hide-details
           hide-selected
           dense
           class="elevation-0"
-          item-text="name"
-          item-value="name"
+          item-value="value"
+          item-text="channel"
           box
 
         />
@@ -94,15 +95,15 @@
       <v-flex xs4>
         <v-autocomplete
           :placeholder="$vuetify.t('Nationality')"
-          v-model="filter"
-          :items="countries"
+          v-model="filter.country"
+          :items="list"
           flat
           hide-details
           hide-selected
           dense
           class="elevation-0"
           item-value="value"
-          item-text="name"
+          item-text="country"
           box
 
         />
@@ -110,14 +111,15 @@
       <v-flex xs4>
         <v-autocomplete
           :placeholder="$vuetify.t('Type Pax')"
-          v-model="filter"
+          v-model="filter.paxtype"
+          :items="list"
           flat
           hide-details
           hide-selected
           dense
           class="elevation-0"
-          item-text="name"
           item-value="value"
+          item-text="paxtype"
           box
 
         />

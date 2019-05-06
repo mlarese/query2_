@@ -1,11 +1,12 @@
 
   [
     {
-      "product": "reservation",
-      "origin": "D",
+      "product": "booked",
+      "origin": "H",
       "country": "Austria",
       "country_iso2": "AT",
       "city": "Traun",
+      "channel": "gold",
       "paxtype": "Couples",
       "checkin": "2016-06-12",
       "checkout": "2016-06-20",
@@ -15,7 +16,7 @@
       "email": "peter.gerhardt@liwest.at"
     },
     {
-      "product": "reservation",
+      "product": "book",
       "origin": "D",
       "country": "Germany",
       "country_iso2": "DE",
@@ -29,8 +30,8 @@
       "email": "pension.sonnenhof@rolmail.net"
     },
     {
-      "product": "reservation",
-      "origin": "D",
+      "product": "prebooked",
+      "origin": "H",
       "country": "Austria",
       "country_iso2": "AT",
       "city": "Wimpassing",
@@ -44,7 +45,7 @@
     },
     {
       "product": "reservation",
-      "origin": "D",
+      "origin": "P",
       "country": "Austria",
       "country_iso2": "AT",
       "city": "St.Veit/Glan",
@@ -57,8 +58,8 @@
       "email": "heiner.kruse@tmo.at"
     },
     {
-      "product": "reservation",
-      "origin": "D",
+      "product": "occupied",
+      "origin": "Y",
       "country": "Austria",
       "country_iso2": "AT",
       "city": "Viktring",
@@ -71,8 +72,8 @@
       "email": "heiner.kruse@tmo.at"
     },
     {
-      "product": "reservation",
-      "origin": "D",
+      "product": "unbook",
+      "origin": "A",
       "country": "Italia",
       "country_iso2": "IT",
       "city": "39020 Castelbello- Ciardes",
@@ -86,7 +87,7 @@
     },
     {
       "product": "reservation",
-      "origin": "D",
+      "origin": "F",
       "country": "Switzerland",
       "country_iso2": "CH",
       "city": "Belp",
@@ -99,8 +100,8 @@
       "email": "gop@belponline.ch"
     },
     {
-      "product": "reservation",
-      "origin": "D",
+      "product": "reserve",
+      "origin": "X",
       "country": "Norway",
       "country_iso2": "NO",
       "city": "Sarpsborg",
@@ -114,7 +115,7 @@
     },
     {
       "product": "reservation",
-      "origin": "D",
+      "origin": "K",
       "country": "Austria",
       "country_iso2": "AT",
       "city": "Gratwein-StraÃŸengel",
@@ -128,7 +129,7 @@
     },
     {
       "product": "reservation",
-      "origin": "D",
+      "origin": "U",
       "country": "Switzerland",
       "country_iso2": "CH",
       "city": "Riehen",
