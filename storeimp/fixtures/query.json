@@ -1,4 +1,5 @@
-{ "query": [
+
+  [
     {
       "product": "reservation",
       "origin": "D",
@@ -10667,5 +10668,4 @@
       "surname": "Waldhart",
       "email": "lavale93@gmail.com"
     }
-  ]
-}
+]

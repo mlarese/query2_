@@ -155,7 +155,7 @@
         </v-flex>
         <v-flex xs2>
           <v-text-field
-            v-model="record.nights"
+            v-model="$record.nights"
             :placeholder="$vuetify.t('Number of nights')"
             type="number"
             box

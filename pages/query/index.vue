@@ -14,7 +14,7 @@
 
     export default {
         name: "Index",
-        components: {QueryList, QueryFilter, AdvancedFilter, },
+        components: {QueryList, AdvancedFilter, QueryFilter },
         fetch ({store}) {
             store.dispatch('query/load', {}, root)
         }

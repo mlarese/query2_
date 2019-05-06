@@ -15,14 +15,14 @@
       <template
         slot="items"
         slot-scope="{item}">
-        <td>{{ item.product_id }}</td>
+        <td>{{ item.product }}</td>
         <td>{{ item.origin }}</td>
         <td>{{ item.channel }}</td>
-        <td>{{ item.nationality }}</td>
-        <td>{{ item.type_pax }}</td>
-        <td>{{ item.from }}</td>
-        <td>{{ item.to }}</td>
-        <td>{{ item.night }}</td>
+        <td>{{ item.country }}</td>
+        <td>{{ item.paxtype }}</td>
+        <td>{{ item.checkin }}</td>
+        <td>{{ item.checkout }}</td>
+        <td>{{ item.nights }}</td>
         <td>{{ item.name }}</td>
       </template>
       <template
@@ -35,30 +35,28 @@
 
 <script>
     import {mapState, mapActions} from 'vuex'
-    const module = 'query'
     export default {
         name: "QueryList",
         data () {
             const headers = [
-                { text: this.$vuetify.t('Product ID'), value: 'product_id' },
+                { text: this.$vuetify.t('Product ID'), value: 'product' },
                 { text: this.$vuetify.t('Origin'), value: 'origin' },
                 { text: this.$vuetify.t('Channel'), value: 'channel' },
-                { text: this.$vuetify.t('Nationality'), value: 'nationality' },
-                { text: this.$vuetify.t('Type Pax'), value: 'type_pax' },
-                { text: this.$vuetify.t('From'), value: 'from' },
-                { text: this.$vuetify.t('To'), value: 'to' },
-                { text: this.$vuetify.t('Night'), value: 'night' },
+                { text: this.$vuetify.t('Nationality'), value: 'country' },
+                { text: this.$vuetify.t('Type Pax'), value: 'paxtype' },
+                { text: this.$vuetify.t('From'), value: 'checkin' },
+                { text: this.$vuetify.t('To'), value: 'checkout' },
+                { text: this.$vuetify.t('Night'), value: 'nights' },
                 { text: this.$vuetify.t('Name'), value: 'name' },
                 { text: ``, value: 'action', sortable: false }
             ]
             return {
                 headers,
-                module,
                 pagination: {}
             }
         },
         computed: {
-            ...mapState('query', ['list', 'filterActive'])
+            ...mapState('query', ['list'])
         },
         methods: {
             ...mapActions('query', ['preload']),
