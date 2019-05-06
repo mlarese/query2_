@@ -133,9 +133,7 @@ export const actionsFn = (endPoint, apiRoute = '/res', extractResult = true, opt
           })
       } else {
         return dispatch('api/get', {url: `${apiRoute}/${endPoint}/${id}`, options}, root)
-          .then(res => {
-            if (extractResult) commit('setRecord', res.data[`${endPoint}s`][0])
-            else commit('setRecord', res.data)
+          .then(res => {commit('setRecord', res.data)
             return res
           })
       }

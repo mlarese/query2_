@@ -1,5 +1,4 @@
-{
-  "query": [
+{ "query": [
     {
       "product": "reservation",
       "origin": "D",
