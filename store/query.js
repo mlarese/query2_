@@ -12,7 +12,7 @@ export const state = () => {
         addRecord: {},
         resetItem: {},
         grid: {pagination: {}},
-        mode: 'list',
+        mode: 'add',
         countries: [
             {'name': 'Afghanistan', 'code': 'AF'},
             {'name': 'Åland Islands', 'code': 'AX'},

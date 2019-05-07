@@ -8,13 +8,16 @@ mock
   .onGet('/profile').reply(() => [200, user])
   .onGet('/principal').reply(() => [200, user])
   .onGet('/query').reply(() => [200, query])
-  .onGet('/clients').reply(() => [200, clients])
-  .onPut('/clients/0').reply(() => [200, 0])
-  .onPut('/clients/10').reply(() => [200, 10])
-  .onPut('/clients/20').reply(() => [200, 20])
-  .onPost('/clients').reply(() => [200, clients])
+    .onPut('/query/booked').reply(() => [200, "booked"])
+    .onPut('/query/book').reply(() => [200, "book"])
+    .onPut('/query/prebooked').reply(() => [200, "prebooked"])
+    .onPut('/query/reservation').reply(() => [200, "reservation"])
+    .onPut('/query/occupied').reply(() => [200, "occupied"])
+    .onPut('/query/unbook').reply(() => [200, "unbook"])
+    .onPost('/query').reply(() => [200, code])
 
-  .onGet('/testerror500').reply(500)
+
+    .onGet('/testerror500').reply(500)
   .onGet('/testerror403').reply(403)
   .onGet('/testtimeout').timeout()
 

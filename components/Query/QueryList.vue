@@ -2,7 +2,7 @@
   <div>
     <v-layout>
       <v-spacer/>
-      <v-btn color="info">{{ $vuetify.t('Run filter') }}</v-btn>
+      <v-btn color="deep-purple accent-4">{{ $vuetify.t('Run filter') }}</v-btn>
       <v-btn color="warning">{{ $vuetify.t('Clear filter') }}</v-btn>
     </v-layout>
     <v-data-table
@@ -15,15 +15,15 @@
       <template
         slot="items"
         slot-scope="{item}">
-        <td>{{ item.product }}</td>
-        <td>{{ item.origin }}</td>
-        <td>{{ item.channel }}</td>
-        <td>{{ item.country }}</td>
-        <td>{{ item.paxtype }}</td>
-        <td>{{ item.checkin }}</td>
-        <td>{{ item.checkout }}</td>
-        <td>{{ item.nights }}</td>
-        <td>{{ item.name }}</td>
+        <td @click="selectItem(item)">{{ item.product }}</td>
+        <td @click="selectItem(item)">{{ item.origin }}</td>
+        <td @click="selectItem(item)">{{ item.channel }}</td>
+        <td @click="selectItem(item)">{{ item.country }}</td>
+        <td @click="selectItem(item)">{{ item.paxtype }}</td>
+        <td @click="selectItem(item)">{{ item.checkin }}</td>
+        <td @click="selectItem(item)">{{ item.checkout }}</td>
+        <td @click="selectItem(item)">{{ item.nights }}</td>
+        <td @click="selectItem(item)">{{ item.name }}</td>
       </template>
       <template
         slot="pageText"
@@ -56,13 +56,10 @@
             }
         },
         computed: {
-            ...mapState('query', ['list'])
+            ...mapState('query', ['list', 'record'])
         },
         methods: {
-            ...mapActions('query', ['preload']),
-            onFilter () {
-                this.preload()
-            }
+            ...mapActions('query', ['selectItem'])
         }
 
     }

@@ -4,15 +4,14 @@
     class="pa-0">
     <v-toolbar
       class="elevation-0"
-      color="teal lighten-3">
+      color="deep-purple accent-4">
       <v-icon>assignment_ind</v-icon>
       <v-toolbar-title>{{ $vuetify.t('Data Model Predictive') }}</v-toolbar-title>
       <v-spacer/>
       <v-btn
-        disable
-        class="elevation-1"
-        color="teal lighten-2"
-        dark
+        class="white--text"
+        color="deep-purple accent-4"
+        @click="save"
       >
         {{ $vuetify.t('Save Query') }}
       </v-btn>
@@ -133,7 +132,6 @@
           <v-autocomplete
             :label="$vuetify.t('Last Booking')"
             :placeholder="$vuetify.t('Days')"
-            v-model="filter"
             flat
             hide-details
             hide-selected
@@ -147,7 +145,7 @@
         </v-flex>
         <v-flex xs2>
           <v-text-field
-            v-model="record"
+            v-model="$record.number"
             :placeholder="$vuetify.t('Number')"
             type="number"
             box
@@ -163,17 +161,19 @@
         </v-flex>
       </v-layout>
 
-  </v-layout></v-container>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>
-    import {mapState} from 'vuex'
+    import {mapState, mapActions} from 'vuex'
     export default {
         name: "QueryFilter",
         data () {
             return {
                 date: null,
                 date2: null,
+                form: false,
                 datePickerTo: true,
                 datePickerFrom: true,
                 pagination: {}
@@ -181,6 +181,9 @@
         },
         computed: {
             ...mapState('query', ['$record', 'record', 'list', 'filterActive'])
+        },
+        methods: {
+            ...mapActions('query', [ 'save'])
         }
     }
 </script>
