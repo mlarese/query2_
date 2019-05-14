@@ -2,12 +2,22 @@
   <div>
     <v-layout>
       <v-spacer/>
-      <v-btn color="deep-purple accent-4">{{ $vuetify.t('Run filter') }}</v-btn>
-      <v-btn color="warning">{{ $vuetify.t('Clear filter') }}</v-btn>
+      <v-btn
+        v-if="!filterActive"
+        :disabled="buttonDisabled"
+        color="deep-purple accent-4"
+        small
+        class="elevation-0"
+        @click="filterList">{{ $vuetify.t('Run filter') }}</v-btn>
+      <v-btn
+        color="warning"
+        small
+        class="elevation-0"
+      >{{ $vuetify.t('Clear filter') }}</v-btn>
     </v-layout>
     <v-data-table
       :headers="headers"
-      :items="list"
+      :items="filteredList"
       :pagination.sync="pagination"
       :hide-actions="false"
       class="elevation-1"
@@ -34,7 +44,7 @@
 </template>
 
 <script>
-    import {mapState, mapActions} from 'vuex'
+    import {mapState} from 'vuex'
     export default {
         name: "QueryList",
         data () {
@@ -56,10 +66,30 @@
             }
         },
         computed: {
-            ...mapState('query', ['list', 'record'])
+            ...mapState('query', ['list', 'record','filter','filteredActive']),
+            filteredList () {
+            return this.list.filter(item => {
+                if (this.filter.product && this.filter.product !== '') if (item.product !==  this.filter.product) return false
+                if (this.filter.origin && this.filter.origin !== '') if (item.origin !==  this.filter.origin) return false
+                if (this.filter.channel && this.filter.channel !== '') if (item.channel !==  this.filter.channel) return false
+                if (this.filter.country && this.filter.country !== '') if (item.country !==  this.filter.country) return false
+                if (this.filter.paxtype && this.filter.paxtype !== '') if (item.paxtype !==  this.filter.paxtype) return false
+            return true
+                 })
+            },
+            filterActive () {
+                return this.$store.state[this.query].filterActive
+            }
         },
         methods: {
-            ...mapActions('query', ['selectItem'])
+            filterList () {
+                this.$store.commit(`${this.query}/setFilterActive`, true, {root: true})
+                this.$emit('on-filter')
+            },
+            unfilterList () {
+                this.$store.commit(`${this.storeName}/setFilterActive`, false, {root: true})
+                this.$emit('on-unfilter')
+            }
         }
 
     }

@@ -49,7 +49,7 @@
         <v-flex xs4>
           <v-autocomplete
             :placeholder="$vuetify.t('Product')"
-            v-model="$record.product"
+            v-model="filter.product"
             :items="list"
             flat
             hide-details
@@ -64,7 +64,7 @@
         <v-flex xs4>
           <v-autocomplete
             :placeholder="$vuetify.t('Origin')"
-            v-model="$record.origin"
+            v-model="filter.origin"
             :items="list"
             flat
             hide-details
@@ -80,7 +80,7 @@
         <v-flex xs4>
           <v-autocomplete
             :placeholder="$vuetify.t('Channel')"
-            v-model="$record.channel"
+            v-model="filter.channel"
             :items="list"
             flat
             hide-details
@@ -98,7 +98,7 @@
         <v-flex xs4>
           <v-autocomplete
             :placeholder="$vuetify.t('Nationality')"
-            v-model="$record.country"
+            v-model="filter.country"
             :items="list"
             flat
             hide-details
@@ -114,7 +114,7 @@
         <v-flex xs4>
           <v-autocomplete
             :placeholder="$vuetify.t('Type Pax')"
-            v-model="$record.paxtype"
+            v-model="filter.paxtype"
             :items="list"
             flat
             hide-details
@@ -149,7 +149,7 @@
             }
         },
         computed: {
-            ...mapState('query', ['$record', 'record', 'list', 'filter', 'countries'])
+            ...mapState('query', ['$record', 'record', 'list', 'filter', 'countries']),
         }
     }
 </script>

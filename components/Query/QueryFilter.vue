@@ -11,8 +11,7 @@
       <v-btn
         class="white--text"
         color="deep-purple accent-4"
-        @click="save"
-      >
+        @click="save">
         {{ $vuetify.t('Save Query') }}
       </v-btn>
     </v-toolbar>
